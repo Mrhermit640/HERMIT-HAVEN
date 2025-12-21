@@ -4,10 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons (free CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #000000 50%, #FFD700 50%); /* Black to gold gradient */
+            color: #FFD700; /* Gold text */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold; /* Made overall text bolder */
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.9); /* Darker semi-transparent black for contrast */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px #FFD700; /* Stronger gold glow */
+            text-align: center;
+            width: 350px;
+            border: 3px solid #FFD700; /* Gold border for template feel */
+        }
+
+        .logo {
+            font-size: 50px; /* Large graphic icon */
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #FFD700;
+            font-size: 28px;
+            font-weight: bolder; /* Extra bold for heading */
+            text-shadow: 2px 2px 4px #000; /* Subtle shadow for depth */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+            background: #000;
+            color: #FFD700;
+            font-size: 16px;
+            font-weight: bold; /* Bolder input text */
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FFA500; /* Darker gold on focus */
+            box-shadow: 0 0 10px #FFD700; /* Glow effect */
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold; /* Bolder button text */
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: #FFA500;
+            transform: scale(1.05); /* Slight grow on hover for interactivity */
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
+        <!-- Added graphic: Gold crown icon as logo -->
+        <div class="logo">
+            <i class="fas fa-crown"></i>
+        </div>
         <h1>Login</h1>
         <form id="loginForm">
             <label for="username">Username:</label>
@@ -19,7 +105,21 @@
             <button type="submit">Login</button>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Demo: Check for basic values (replace with actual auth)
+            if (username && password) {
+                alert('Login successful! (Demo only)');
+                // Redirect or handle login here, e.g., window.location.href = '/dashboard';
+            } else {
+                alert('Please enter username and password.');
+            }
+        });
+    </script>
 </body>
 </html>
 
