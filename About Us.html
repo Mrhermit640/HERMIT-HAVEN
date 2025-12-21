@@ -1,99 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .team {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .member {
-            text-align: center;
-            margin: 10px;
-        }
-        .member img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
-        button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Loan Business</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, rgba(0,0,0,0.8) 50%, rgba(255,215,0,0.8) 50%),
+                  url('https://via.placeholder.com/1920x1080/000000/FFD700?text=Gold+Texture') no-repeat center center fixed;
+      background-size: cover;
+      color: #FFD700;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .about-container {
+      background: rgba(0, 0, 0, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px #FFD700, inset 0 0 20px rgba(255, 215, 0, 0.1);
+      width: 600px;
+      text-align: center;
+      border: 4px solid #FFD700;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #FFD700;
+      font-size: 32px;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    p {
+      font-size: 16px;
+      color: #FFA500;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #FFA500;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>About Us</h1>
-        <p>Learn more about our company and team.</p>
-    </header>
-    
-    <div class="container">
-        <h2>Our Story</h2>
-        <p>We are a passionate team dedicated to [briefly describe your company's mission, e.g., "innovating in technology to make the world a better place"]. Founded in [year], we've grown from a small startup to a leader in [industry].</p>
-        
-        <h2>Our Team</h2>
-        <div class="team">
-            <div class="member">
-                <img src="https://via.placeholder.com/100" alt="Team Member 1">
-                <h3>John Doe</h3>
-                <p>CEO</p>
-            </div>
-            <div class="member">
-                <img src="https://via.placeholder.com/100" alt="Team Member 2">
-                <h3>Jane Smith</h3>
-                <p>CTO</p>
-            </div>
-            <!-- Add more members as needed -->
-        </div>
-        
-        <button onclick="alert('Thanks for visiting!')">Contact Us</button>
-    </div>
-    
-    <footer>
-        <p>&copy; 2023 Your Company. All rights reserved.</p>
-    </footer>
-    
-    <script>
-        // Simple JS for demonstration
-        console.log("About Us page loaded!");
-    </script>
-</body>
-</html>
+  <div class="about-container">
+    <h1>About Us</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About Us</a>
+    </nav>
+    <p>
+      Welcome to Loan Business, your trusted partner in financial solutions.  
+      We provide secure, transparent, and customer-focused loan services designed to help you achieve your goals.  
+      Our mission is to empower individuals and businesses with the financial support they need, backed by integrity and innovation.
+    </p>
+    <p>
+      With a commitment to excellence, we ensure that every client receives personalized attention and reliable service.  
+      Join us in building a future of financial stability and success.
+    </p>
+  </div>
