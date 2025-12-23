@@ -44,6 +44,7 @@
   </style>
 </head>
 <body>
+
   <div class="container">
     <h1 id="formTitle">Login</h1>
 
@@ -72,68 +73,29 @@
     <span class="toggle-link" id="toggleForm">Create an account</span>
   </div>
 
-  <script>
-    // 🔧 Replace with your Firebase config
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-    // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCCVp7kw8vw1owRBC8b9VbKkwtFJy9d04g",
+    authDomain: "hermit-microloans27.firebaseapp.com",
+    projectId: "hermit-microloans27",
+    storageBucket: "hermit-microloans27.firebasestorage.app",
+    messagingSenderId: "949608098960",
+    appId: "1:949608098960:web:77a8345129dbe753667c15",
+    measurementId: "G-2288H27VYX"
+  };
 
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-    const toggleLink = document.getElementById('toggleForm');
-    const formTitle = document.getElementById('formTitle');
-
-    // Toggle between login and register
-    toggleLink.addEventListener('click', () => {
-      if (loginForm.style.display === 'none') {
-        loginForm.style.display = 'block';
-        registerForm.style.display = 'none';
-        formTitle.textContent = 'Login';
-        toggleLink.textContent = 'Create an account';
-      } else {
-        loginForm.style.display = 'none';
-        registerForm.style.display = 'block';
-        formTitle.textContent = 'Create Account';
-        toggleLink.textContent = 'Already have an account? Login';
-      }
-    });
-
-    // Login
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('loginEmail').value;
-      const password = document.getElementById('loginPassword').value;
-
-      auth.signInWithEmailAndPassword(email, password)
-        .then(() => {
-          alert("Login successful!");
-          window.location.href = "dashboard.html";
-        })
-        .catch(error => alert(error.message));
-    });
-
-    // Register
-    registerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('regEmail').value;
-      const password = document.getElementById('regPassword').value;
-
-      auth.createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          alert("Account created successfully!");
-          window.location.href = "dashboard.html";
-        })
-        .catch(error => alert(error.message));
-    });
-  </script>
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
+
