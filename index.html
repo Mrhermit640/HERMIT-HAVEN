@@ -29,11 +29,30 @@
     input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: 2px solid #FFD700; background: #111; color: #FFD700; }
     button { width: 100%; padding: 12px; background: linear-gradient(45deg, #FFD700, #FFA500); border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
     .toggle-link { margin-top: 10px; color: #FFA500; cursor: pointer; display: block; }
+    nav {
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #FFA500;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1 id="formTitle">Login</h1>
+
+    <!-- Navigation Links -->
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="About Us.html">About Us</a> |
+      <a href="Contact Us.html">Contact Us</a> |
+    </nav>
 
     <!-- Login Form -->
     <form id="loginForm">
