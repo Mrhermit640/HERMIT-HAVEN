@@ -161,21 +161,24 @@
     </div>
   </div>
 
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+ <script>
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-      if (username && password) {
-        // Redirect to dashboard window.location.href = "Dashboard.html";
-        } else {
-        alert('Please enter valid username and password.');
-      }
-    });
-  </script>
+    if (username && password) {
+      // Redirect to dashboard
+      window.location.href = "dashboard.html";
+    } else {
+      alert('Please enter valid username and password.');
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
