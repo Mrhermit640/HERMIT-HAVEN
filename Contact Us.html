@@ -138,13 +138,15 @@
   <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
+if($_POST) {
+  $to = "company@example.com"; // your company email
+  $subject = "New Contact Form Submission";
+  $message = "Name: " . $_POST['name'] . "\n";
+  $message .= "Email: " . $_POST['email'] . "\n";
+  $message .= "Message: " . $_POST['message'];
 
-      if (name && email && message) {
-        alert('Thank you, ' + name + '! Your message has been sent. (Demo only)');
-        // In a real app, you would send this data to a server here
+  mail($to, $subject, $message);
+  echo "Message sent!";
       } else {
         alert('Please fill out all fields before submitting.');
       }
@@ -152,5 +154,6 @@
   </script>
 </body>
 </html>
+
 
 
