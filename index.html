@@ -95,7 +95,60 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const toggleLink = document.getElementById('toggleForm');
+    const formTitle = document.getElementById('formTitle');
+
+    // Toggle between login and register
+    toggleLink.addEventListener('click', () => {
+      if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        formTitle.textContent = 'Login';
+        toggleLink.textContent = 'Create an account';
+      } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+        formTitle.textContent = 'Create Account';
+        toggleLink.textContent = 'Already have an account? Login';
+      }
+    });
+
+    // Login
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          alert("Login successful!");
+          window.location.href = "dashboard.html";
+        })
+        .catch(error => alert(error.message));
+    });
+
+    // Register
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          alert("Account created successfully!");
+          window.location.href = "dashboard.html";
+        })
+        .catch(error => alert(error.message));
+    });
+  </script>
+</body>
+</html>
+ 
 </script>
 </body>
 </html>
+
 
