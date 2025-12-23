@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loan Business Portal</title>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -44,15 +42,15 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <h1 id="formTitle">Login</h1>
 
     <!-- Navigation Links -->
     <nav>
       <a href="index.html">Home</a> |
-      <a href="About Us.html">About Us</a> |
-      <a href="Contact Us.html">Contact Us</a> |
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact Us</a> |
+      <a href="dashboard.html">Dashboard</a>
     </nav>
 
     <!-- Login Form -->
@@ -73,29 +71,26 @@
     <span class="toggle-link" id="toggleForm">Create an account</span>
   </div>
 
+  <!-- Firebase Modular SDK -->
   <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCCVp7kw8vw1owRBC8b9VbKkwtFJy9d04g",
-    authDomain: "hermit-microloans27.firebaseapp.com",
-    projectId: "hermit-microloans27",
-    storageBucket: "hermit-microloans27.firebasestorage.app",
-    messagingSenderId: "949608098960",
-    appId: "1:949608098960:web:77a8345129dbe753667c15",
-    measurementId: "G-2288H27VYX"
-  };
+    // Your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyCCVp7kw8vw1owRBC8b9VbKkwtFJy9d04g",
+      authDomain: "hermit-microloans27.firebaseapp.com",
+      projectId: "hermit-microloans27",
+      storageBucket: "hermit-microloans27.appspot.com",
+      messagingSenderId: "949608098960",
+      appId: "1:949608098960:web:77a8345129dbe753667c15",
+      measurementId: "G-2288H27VYX"
+    };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     const toggleLink = document.getElementById('toggleForm');
@@ -122,7 +117,7 @@
       const email = document.getElementById('loginEmail').value;
       const password = document.getElementById('loginPassword').value;
 
-      auth.signInWithEmailAndPassword(email, password)
+      signInWithEmailAndPassword(auth, email, password)
         .then(() => {
           alert("Login successful!");
           window.location.href = "dashboard.html";
@@ -136,7 +131,7 @@
       const email = document.getElementById('regEmail').value;
       const password = document.getElementById('regPassword').value;
 
-      auth.createUserWithEmailAndPassword(email, password)
+      createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           alert("Account created successfully!");
           window.location.href = "dashboard.html";
@@ -146,9 +141,3 @@
   </script>
 </body>
 </html>
- 
-</script>
-</body>
-</html>
-
-
